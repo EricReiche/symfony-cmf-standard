@@ -10,10 +10,12 @@ class AppKernel extends Kernel
         $bundles = array(
             // enable symfony-standard bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
@@ -32,6 +34,26 @@ class AppKernel extends Kernel
 
             // and the sandbox bundle
             new Acme\MainBundle\AcmeMainBundle(),
+
+
+            new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\SymfonyCmfTreeBrowserBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+
+
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -10,6 +10,30 @@ home_redirect:
         route: /cms/simple
         permanent: true # this for 301
 
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+phpcrbrowser:
+    resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
+    prefix: /admin/browser
+
+phpcrodmbrowser:
+    resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
+    prefix: /admin/browser
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
 cmf_create_rest:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
 
